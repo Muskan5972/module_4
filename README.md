@@ -4,7 +4,7 @@ This is a smart contract in the form of Token for Degen Gaming where several fun
 # Getting Started
 Executing program Steps to be followed inorder to run the contract seamlessly:
 
-First we have to take test credit in the form of AVAX tokens in the Avalanche Fuji C-Chain. Now we will go to core web app to request for Tokens and there we have to enter the coupon code We will get 0.5 AVAX per day and after that we can use those to test our contract. Now we will go back to Remix and then choose Environment as Injected Provider - Metamask and after that deploy the contract. Now we wil copy the address of the deployed contract and then paste it in Snowtrace Testnet and then click on verify and publish contracts. Then we will click on verify and then select chain as Fuji, enter the address of the new contract and then select the compiler version mentioned in the solidity file. After all is done we will now perform transaction in the contract and those will be logged in the Snowtrace.
+To run the DegenToken contract seamlessly, first set up your environment by installing MetaMask and ensuring it has some test ETH, and choose a Solidity development environment like Remix, Truffle, or Hardhat. Next, compile the contract using your chosen development tool. Once compiled, deploy the contract to a test network—if using Remix, connect with MetaMask to deploy, or use truffle migrate or npx hardhat run for Truffle or Hardhat. After deployment, interact with the contract's functions, such as mint, burn, listItem, and redeem, to manage tokens and items. Finally, thoroughly test all functionalities on a testnet to verify the contract works correctly before deploying it to the mainnet.
 
 # code
 // SPDX-License-Identifier: UNLICENSED
