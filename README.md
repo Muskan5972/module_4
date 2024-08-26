@@ -7,6 +7,7 @@ Executing program Steps to be followed inorder to run the contract seamlessly:
 To run the DegenToken contract seamlessly, first set up your environment by installing MetaMask and ensuring it has some test ETH, and choose a Solidity development environment like Remix, Truffle, or Hardhat. Next, compile the contract using your chosen development tool. Once compiled, deploy the contract to a test network—if using Remix, connect with MetaMask to deploy, or use truffle migrate or npx hardhat run for Truffle or Hardhat. After deployment, interact with the contract's functions, such as mint, burn, listItem, and redeem, to manage tokens and items. Finally, thoroughly test all functionalities on a testnet to verify the contract works correctly before deploying it to the mainnet.
 
 # code
+'''javascript
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.20;
 
@@ -93,6 +94,7 @@ contract DegenToken is ERC20, Ownable {
         return redeemedItems[account];
     }
 }
+javascript '''
 # Working
 After the Contract is deployed we can perform the following operations in it:
 
