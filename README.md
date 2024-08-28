@@ -1,17 +1,33 @@
 # Module4
 This is a smart contract in the form of Token for Degen Gaming where several functionalities can be performed.
 
-# Getting Started
-Executing program Steps to be followed inorder to run the contract seamlessly:
+## Descripition
+DegenToken is an ERC-20 token built on the Ethereum blockchain using the Solidity programming language. The contract is based on OpenZeppelin's ERC-20 and Ownable implementations, and it introduces unique features for listing and redeeming items. Token holders can redeem items using their tokens, and only the contract owner has the authority to list new items.
 
-To run the DegenToken contract seamlessly, first set up your environment by installing MetaMask and ensuring it has some test ETH, and choose a Solidity development environment like Remix, Truffle, or Hardhat. Next, compile the contract using your chosen development tool. Once compiled, deploy the contract to a test network—if using Remix, connect with MetaMask to deploy, or use truffle migrate or npx hardhat run for Truffle or Hardhat. After deployment, interact with the contract's functions, such as mint, burn, listItem, and redeem, to manage tokens and items. Finally, thoroughly test all functionalities on a testnet to verify the contract works correctly before deploying it to the mainnet.
+## Functions:
+* __Constructor:__
+   * Initializes the token with the name "Degen" and symbol "DGN".
+   * Sets the initial owner of the contract.
+* __mint(address to, uint256 amount):__
+  * Allows the owner to mint new tokens to the specified address.
+* __transfer(address to, uint256 amount):__
+  * Overrides the ERC-20 transfer function to facilitate token transfers between addresses.
+* __burn(uint256 amount):__
+  * Allows users to burn their tokens, permanently reducing the total supply.
+* __redeem(uint itemId):__
+  * Allows users to redeem an item by transferring the item's price in tokens to the owner.
+  * Records the redeemed item under the user's account and marks the item as unavailable.
+* __listItem(string memory name, uint price):__
+  * Allows the owner to list a new item by specifying its name and price.
+    
+## code
+'''
 
-# code
-'''javascript
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.20;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract DegenToken is ERC20, Ownable {
@@ -94,14 +110,21 @@ contract DegenToken is ERC20, Ownable {
         return redeemedItems[account];
     }
 }
-javascript '''
-# Working
-After the Contract is deployed we can perform the following operations in it:
+'''
 
-Minting Tokens: Creating new Tokens (can only be done by the ownwer). Burning Tokens: Burn the Tokens from the whole Smart Contract. RedeemTokens: Buy different merchandise by using Tokens. Transfer Tokens: Transfer Token from a particular address to another address. GetBalance: Check the balance of a particular address at a particular time.
+## Working
+The DegenToken project is an ERC-20 token with additional features for item listing and redemption. Here's a brief overview of how it works:
 
-Apart from it we also have to flatten the file because the JSON format has to be adaptible as normal import statements are not compatible in the verification portal.
+*__Minting Tokens:__ The contract owner can create new Degen (DGN) tokens and distribute them to users
 
-# Authors
+*__Transferring and Burning:__ Users can transfer tokens to others or burn them to reduce the total supply.
+
+*__Listing Items:__ The owner lists items with a name and price in DGN tokens. These items are available for users to redeem.
+
+*__Redeeming Items:__ Users can spend their DGN tokens to redeem listed items. Once redeemed, the item becomes unavailable, and the tokens are transferred to the owner.
+
+*__Querying:__ Users can check item details, their token balance, and view items they've redeemed.
+
+## Authors
 Muskan 
 
